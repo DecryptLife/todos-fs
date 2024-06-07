@@ -56,8 +56,8 @@ router.post("/login", (req, res) => {
 
   res.cookie("token", token, {
     httpOnly: true,
-    secure: false, // Change to true if using HTTPS
     sameSite: "Lax", // Adjust based on your use case
+    secure: false,
     maxAge: 3600000, // 1 hour
   });
 

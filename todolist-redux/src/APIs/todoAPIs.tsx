@@ -6,7 +6,9 @@ interface ITodo {
 }
 
 export const getTodos = () => {
-  return fetch(baseURL).then((res) => res.json());
+  return fetch(baseURL, {
+    credentials: "include",
+  }).then((res) => res.json());
 };
 
 export const getTodo = (id: ITodo["id"]) => {
@@ -20,6 +22,7 @@ export const createTodo = (newTodo: ITodo) => {
     headers: {
       "Content-Type": "application/json",
     },
+    credentials: "include",
     body: JSON.stringify(newTodo),
   }).then((res) => res.json());
 };

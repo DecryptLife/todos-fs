@@ -5,7 +5,7 @@ const dotenv = require("dotenv");
 dotenv.config();
 
 function isVerified(req, res, next) {
-  console.log(req.cookies);
+  console.log(req);
   // const token =
   //   req.headers["authorization"] && req.headers["authorization"].split(" ")[1];
 
